@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/datepicker3.css" />
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="main.css">
+
+  <title>CSC 642 Summer 2020 Individual Assignment Alexander Gao</title>
+
+</head>
+<body>
+  <div class="jumbotron text-center">
+    <h1>CSC 642 Summer 2020 Individual Assignment Alexander Gao</h1>
+    <p>Data survey form</p>
+  </div>
+  <div class="container">
+    <form data-toggle="validator" role="form" action="validated.html" method="GET">
+      <!-- Name input -->
+      <div class="form-row">
+        <div class="form-group required col-sm-6">
+          <label class="control-label" for="UserFirstName">First Name</label>
+          <input type="text" class="form-control" id="UserFirstName" name="UserFirstName" placeholder="Enter first name" maxlength="40" required>
+          <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group required col-sm-6">
+          <label class="control-label" for="UserLastName">Last Name</label>
+          <input type="text" class="form-control" id="UserLastName" name="UserLastName" placeholder="Enter last name" maxlength="40" required>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+
+      <!-- Address input -->
+      <div class="form-row">
+        <div class="form-group required col-sm-6">
+          <label class="control-label" for="address">Address</label>
+          <input type="text" class="form-control" id="address" name="address" placeholder="Enter address" required>
+          <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group required col-sm-2">
+          <label class="control-label" for="city">City</label>
+          <input type="text" class="form-control" id="city" name="city" placeholder="Enter city" required>
+          <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group required col-sm-2">
+          <label class="control-label" for="State">State</label>
+          <select class="form-control" id="state_id" name="state_id" required>
+            <option selected>Select One</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+          </select>
+          <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="form-group required col-sm-2">
+          <label class="control-label" for="ZIP">ZIP Code</label>
+          <input class="form-control" type="tel" id="ZIP" name="ZIP" placeholder="Enter ZIP Code" pattern="[0-9]{5}" data-error="Please enter 5 digit ZIP Code" required>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+
+      <!-- Date input -->
+      <div class="form-group required">
+        <label class="control-label" for="date">Birth date</label>
+        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" required/>
+        <div class="help-block with-errors"></div>
+      </div>
+
+      <!-- Education input -->
+      <div class="form-group">
+        <label for="Education">Education level</label>
+        <select class="form-control" id="Education" name="Education">
+          <option selected>Select One</option>
+          <option value="High School">High School</option>
+          <option value="College">College</option>
+          <option value="Graduate Studies">Graduate Studies</option>
+          <option value="Ph.D">Ph.D</option>
+        </select>
+      </div>
+
+      <!-- Height input -->
+      <div class="form-row">
+        <div class="form-group col-sm-2">
+          <label for="Feet">Feet</label>
+          <select class="form-control" id="feet" name="feet">
+            <option selected>Select One</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+        <div class="form-group col-sm-2">
+          <label for="Inches">Inches</label>
+          <select class="form-control" id="inches" name="inches">
+            <option selected>Select One</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Phone number input -->
+      <div class="form-group required">
+        <label class="control-label" for="phone">Phone number</label>
+        <input class="form-control" type="tel" id="phone" name="phone" placeholder="Enter 7 digit phone number" data-error="Please enter 7 digit phone number" pattern="[0-9]{7}" required>
+        <div class="help-block with-errors"></div>
+      </div>
+
+      <div class="form-row">
+        <!-- Email input -->
+        <div class="form-group required col-sm-6">
+          <label class="control-label" for="txtEmail">Email address</label>
+          <input type="email" id="txtEmail" name="txtEmail" placeholder="Email Address" class="form-control" runat="server" maxlength="50" required />
+          <div class="help-block with-errors"></div>
+        </div>
+
+        <!-- Email confirmation -->
+        <div class="form-group required col-sm-6">
+          <label class="control-label" for="txtConfirmEmail">Confirm Email address</label>
+          <input type="email" id="txtConfirmEmail" data-match="#txtEmail" data-match-error="Email Addresses do not match." placeholder="Confirm Email" class="form-control" runat="server" maxlength="50" required/>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+
+      <!-- Terms check -->
+      <div class="form-group required form-check">
+        <input type="checkbox" class="form-check-input" id="termsCheck" required>
+        <label class="form-check-label control-label" for="termsCheck">I Agree to terms</label>
+        <div class="help-block with-errors"></div>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+
+  <script src="main.js"></script>
+  <!-- Include jQuery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+  <!-- Include Date Range Picker -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+  <!-- validator -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+    var date_input=$('input[name="date"]'); //our date input has the name "date"
+    var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+    date_input.datepicker({
+      startDate: '-123y',
+      endDate: '-1d',
+      format: 'mm/dd/yyyy',
+      container: container,
+      todayHighlight: true,
+      autoclose: true,
+    })
+  })
+  </script>
+  <script>
+  $('#myForm').validator()
+  </script>
+</body>
+</html>

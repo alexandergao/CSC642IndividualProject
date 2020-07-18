@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/datepicker3.css" />
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="main.css">
+
+  <title>CSC 642 Summer 2020 Individual Assignment Alexander Gao</title>
+
+  <script>
+  function getQueryString() {
+    var result = {}, queryString = location.search.slice(1),
+        re = /([^&=]+)=([^&]*)/g, m;
+
+    while (m = re.exec(queryString)) {
+      result[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+    }
+
+    return result;
+  }
+  </script>
+
+</head>
+<body>
+  <div class="jumbotron text-center">
+    <h1>Results verification page Alexander Gao</h1>
+  </div>
+
+  <div class="container">
+    <form>
+      <fieldset disabled>
+        <!--- Name --->
+        <div class="form-row">
+          <div class="form-group col-sm-6">
+            <label class="control-label" for="UserFirstName">First Name</label>
+            <input type="text" class="form-control" id="UserFirstName" name="UserFirstName" placeholder="Enter first name" maxlength="40">
+            <script>document.getElementById('UserFirstName').value=getQueryString()["UserFirstName"];</script>
+          </div>
+          <div class="form-group col-sm-6">
+            <label class="control-label" for="UserLastName">Last Name</label>
+            <input type="text" class="form-control" id="UserLastName" name="UserLastName" placeholder="Enter last name" maxlength="40">
+            <script>document.getElementById('UserLastName').value=getQueryString()["UserLastName"];</script>
+          </div>
+        </div>
+
+        <!--- Address --->
+        <div class="form-row">
+          <div class="form-group col-sm-6">
+            <label class="control-label" for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="Enter address">
+            <script>
+            var temp = getQueryString()["address"];
+            document.getElementById('address').value=temp.split('+').join(' ');
+          </script>
+          </div>
+          <div class="form-group col-sm-2">
+            <label class="control-label" for="city">City</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="Enter city">
+            <script>document.getElementById('city').value=getQueryString()["city"];</script>
+          </div>
+          <div class="form-group col-sm-2">
+            <label class="control-label" for="State">State</label>
+            <input type="text" class="form-control" id="state_id" name="state_id">
+            <script>document.getElementById('state_id').value=getQueryString()["state_id"];</script>
+          </div>
+
+          <div class="form-group col-sm-2">
+            <label class="control-label" for="ZIP">ZIP Code</label>
+            <input class="form-control" type="tel" id="ZIP" name="ZIP" placeholder="Enter ZIP Code" pattern="[0-9]{5}" data-error="Please enter 5 digit ZIP Code">
+            <script>document.getElementById('ZIP').value=getQueryString()["ZIP"];</script>
+          </div>
+        </div>
+
+        <!--- Birthdate --->
+        <div class="form-group">
+          <label class="control-label" for="date">Birth date</label>
+          <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+          <script>document.getElementById('date').value=getQueryString()["date"];</script>
+        </div>
+
+        <!--- Education --->
+        <div class="form-group">
+          <label for="Education">Education level</label>
+          <input type ="text" class="form-control" id="Education" name="Education">
+          <script>document.getElementById('Education').value=getQueryString()["Education"];</script>
+        </div>
+
+        <!--- Height --->
+        <div class="form-row">
+          <div class="form-group col-sm-2">
+            <label for="Feet">Feet</label>
+            <input type="text" class="form-control" id="feet" name="feet">
+            <script>document.getElementById('feet').value=getQueryString()["feet"];</script>
+          </div>
+          <div class="form-group col-sm-2">
+            <label for="Inches">Inches</label>
+            <input type="text" class="form-control" id="inches" name="inches">
+            <script>document.getElementById('inches').value=getQueryString()["inches"];</script>
+          </div>
+        </div>
+
+        <!-- Phone number -->
+        <div class="form-group">
+          <label class="control-label" for="phone">Phone number</label>
+          <input class="form-control" type="tel" id="phone" name="phone" placeholder="Enter 7 digit phone number" data-error="Please enter 7 digit phone number" pattern="[0-9]{7}">
+          <script>document.getElementById('phone').value=getQueryString()["phone"];</script>
+        </div>
+
+        <!-- Email input -->
+        <div class="form-group col-sm-6">
+          <label class="control-label" for="txtEmail">Email address</label>
+          <input type="email" id="txtEmail" name="txtEmail" placeholder="Email Address" class="form-control" />
+          <script>document.getElementById('txtEmail').value=getQueryString()["txtEmail"];</script>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+
+
+  <script src="main.js"></script>
+  <!-- Include jQuery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+  <!-- Include Date Range Picker -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+  <!-- validator -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+
+
+</body>
+</html>
